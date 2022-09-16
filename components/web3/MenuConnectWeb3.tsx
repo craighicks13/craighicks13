@@ -172,7 +172,7 @@ export default function MenuConnectWeb3() {
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
                                 >
-                                <Listbox.Options className="absolute mt-1 max-h-56 md:max-h-fit rounded-md bg-white w-full overflow-auto py-1 text-sm shadow-lg ring-2 ring-primary_2 focus:outline-none">
+                                <Listbox.Options className="absolute z-10 mt-1 max-h-56 md:max-h-fit rounded-md bg-white w-full overflow-auto py-1 text-sm shadow-lg ring-2 ring-primary_2 focus:outline-none">
                                     <div className='px-1 py-1'>
                                         {chainIds.map((chainId) => (
                                             <Listbox.Option key={chainId} value={chainId}

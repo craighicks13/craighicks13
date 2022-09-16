@@ -57,7 +57,7 @@ export default function Doodles() {
                         />
                     </>} 
                 content={"Check out my Etsy store where you can find printed posters and digital downloads."} 
-                link={undefined}                
+                link={'https://www.etsy.com/ca/shop/chicksDoodles'}                
                 />
         <FeatureContainerTwo 
                 right={
