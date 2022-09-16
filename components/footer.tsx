@@ -50,7 +50,7 @@ export default function Footer() {
 
     return(
         <>
-            <div className="sm:grid grid-flow-col auto-cols-max gap-5 w-full justify-between px-10 pt-5 h-36 bg-textmain text-neutral-100 mt-10 border">
+            <div className="sm:grid grid-flow-col auto-cols-max gap-5 w-full justify-between px-10 pt-5 h-36 bg-textmain text-neutral-100 mt-10">
                 <div className="">
                     <form id="newsletter_form" method="post" onSubmit={handleSubmit}>
                         <div className="text-sm">Sign up for my Newsletter!! I will send you updates and stuff.</div>

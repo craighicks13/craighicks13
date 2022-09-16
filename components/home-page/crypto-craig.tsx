@@ -14,7 +14,6 @@ export default function CryptoCraig() {
                                     width={1400}
                                     alt="CryptoCraig NFT Collection"
                                     />
-
     return (
         <>
             <FeatureContainerOne 

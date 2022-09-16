@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function FeatureContainerTwo({ left, right, content, link}) {
     return(
         <>
-            <div className="p-10 mt-10 w-full space-y-5">
+            <div className="p-10 w-full space-y-5">
                 <div className="grid items-center justify-center justify-items-center md:justify-items-start md:grid-cols-2">
                     <div className="max-w-xl rounded-lg">
                         <div className="min-w-sm max-w-lg">{left}</div>

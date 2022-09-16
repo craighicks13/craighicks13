@@ -48,7 +48,7 @@ export default async function handler(req, res):Promise<any> {
             let createContact = new SibApiV3Sdk.CreateContact();
 
             createContact.email = email;
-            createContact.listIds = [2, 5]
+            createContact.listIds = [2]
 
             apiInstance.createContact(createContact).then(function(data) {
                 console.log('API called successfully. Returned data: ' + JSON.stringify(data));
