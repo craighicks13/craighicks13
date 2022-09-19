@@ -35,7 +35,9 @@
   }
 
   body {
-    @apply font-primary text-sm md:text-base;
+    @apply font-primary text-sm md:text-base; 
+    @apply text-neutral-800;
+    @apply bg-gradient-to-b from-neutral-100 via-neutral-100 to-neutral-200;
   }
 
   .layout {

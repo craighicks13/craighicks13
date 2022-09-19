@@ -20,7 +20,6 @@ export default function MainMenu() {
 					<Link href="/services/email-campaigns">
 						<a>Services</a>
 					</Link>
-					<MenuConnectWeb3 />
 				</div>
 			</div>
 			<div className="md:hidden">
@@ -83,9 +82,6 @@ export default function MainMenu() {
 											<Link href="/services/email-campaigns">
 												<a>Services</a>
 											</Link>
-										</div>
-										<div>
-											<MenuConnectWeb3 />
 										</div>
 									</div>
 								</div>
