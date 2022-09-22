@@ -40,6 +40,26 @@
     @apply bg-gradient-to-b from-neutral-100 via-neutral-100 to-neutral-200;
   }
 
+  p {
+    @apply mb-5;
+  }
+
+  a {
+    @apply underline text-secondary hover:text-secondary_2;
+  }
+
+  dl {
+    @apply ml-5;
+  }
+
+  dt {
+    @apply mt-2;
+  }
+
+  dd {
+    @apply pl-5;
+  }
+
   .layout {
     /* 750px */
     /* max-width: 43.75rem; */

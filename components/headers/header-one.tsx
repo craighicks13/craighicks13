@@ -25,7 +25,7 @@ export default function HeaderOne() {
 					<MainMenu />
 				</div>
 			</div>
-			<div className="w-full p-2 bg-secondary">
+			<div className="w-full px-5 py-2 bg-secondary">
 				<div className="grid grid-flow-col items-center auto-cols-max gap-5 max-w-6xl mx-auto justify-end ">
 					<MenuConnectWeb3 />
 				</div>

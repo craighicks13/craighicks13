@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        primary: ['articulat-cf', ...fontFamily.sans],
+        primary: ['arboria', 'articulat-cf', ...fontFamily.sans],
         serif: ['Merriweather', 'serif'],
       },
     },
