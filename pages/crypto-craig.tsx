@@ -6,8 +6,9 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { ethers } from 'ethers';
 import { Web3Provider } from '@ethersproject/providers';
 import { useWeb3React, Web3ReactHooks } from '@web3-react/core';
-import NetworkConfigInterface from '../../../smart-contract/lib/NetworkConfigInterface';
+import NetworkConfigInterface from '../interfaces/NetworkConfigInterface';
 import NftContractType from '../lib/NftContractType';
+import { Contract } from '@ethersproject/contracts';
 import Whitelist from '../lib/Whitelist';
 import { getContentData } from '../lib/content';
 import CollectionConfig from '../config/CollectionConfig';
@@ -15,7 +16,6 @@ import MintWidget from '../components/web3/nft/MintWidget';
 import CollectionStatus from '../components/web3/nft/CollectionStatus';
 import NotConnected from '../components/web3/nft/NotConnected';
 import NoContract from '../components/web3/nft/NoContract';
-import { Accounts } from '../components/web3/Accounts';
 
 const ContractAbi = require('../artifacts/' +
 	CollectionConfig.contractName +
@@ -33,7 +33,7 @@ export async function getStaticProps() {
 export default function CryptoCraig({ faq }) {
 	const { account, chainId, isActive, provider, ENSName } =
 		useWeb3React<Web3Provider>();
-	const [contract, setContract] = useState<NftContractType>();
+	const [contract, setContract] = useState<Contract>();
 	const [maxSupply, setMaxSupply] = useState<number>(0);
 	const [totalSupply, setTotalSupply] = useState<number>(0);
 	const [isPaused, setIsPaused] = useState<boolean>(false);
@@ -53,7 +53,7 @@ export default function CryptoCraig({ faq }) {
 	const [hasMinted, setHasMinted] = useState<boolean>(false);
 
 	const collectionInfo: NetworkConfigInterface =
-		CollectionConfig.testnet[0];
+		CollectionConfig.mainnet;
 
 	useEffect(() => {
 		async function getContractCode(): Promise<void> {
@@ -79,7 +79,7 @@ export default function CryptoCraig({ faq }) {
 				collectionInfo.blockExplorer.contract,
 				ContractAbi,
 				provider?.getSigner()
-			) as unknown as NftContractType;
+			) as unknown as Contract;
 			setContract(contract);
 			setMaxSupply((await contract.maxSupply()).toNumber());
 			setTotalSupply((await contract.totalSupply()).toNumber());
