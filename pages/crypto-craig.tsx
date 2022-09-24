@@ -66,8 +66,8 @@ export default function CryptoCraig({ faq }) {
 	const [txHash, setTxHash] = useState<string>(null);
 
 	const collectionInfo: NetworkConfigInterface =
-		//	CollectionConfig.mainnet;
-		CollectionConfig.testnet[0];
+		CollectionConfig.mainnet;
+	//CollectionConfig.testnet[0];
 
 	useEffect(() => {
 		async function getContractCode(): Promise<void> {
