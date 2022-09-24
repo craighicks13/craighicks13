@@ -1,4 +1,4 @@
-import whitelistAddresses from '../../../smart-contract/config/whitelist.json';
+import whitelistAddresses from '../config/whitelist.json';
 import { MerkleTree } from 'merkletreejs';
 import keccak256 from 'keccak256';
 
