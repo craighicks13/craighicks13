@@ -7,6 +7,7 @@ interface Props {
 	isPaused: boolean;
 	isWhitelistMintEnabled: boolean;
 	isUserInWhitelist: boolean;
+	blockexplorer: string;
 }
 
 interface State {}
@@ -35,7 +36,7 @@ export default class CollectionStatus extends React.Component<
 						<span className="block font-semibold -mx-2 lg:mx-0 text-xs text-primary_2">
 							Wallet address:
 						</span>
-						<span className="w-full font-semibold truncate text-center">
+						<span className="w-full font-semibold truncate text-center text-sm md:text-xs xl:text-sm">
 							{this.props.userAddress}
 						</span>
 					</div>
@@ -47,7 +48,7 @@ export default class CollectionStatus extends React.Component<
 						{this.props.totalSupply}/{this.props.maxSupply}
 					</div>
 
-					<div className="p-4 text-center border-b sm:border-b-0 sm:border-r border-neutral-200">
+					<div className="p-4 text-center border-b sm:border-b-0 border-neutral-200">
 						<span className="block font-semibold -mx-2 lg:mx-0 text-xs text-primary_2">
 							Sale status
 						</span>
@@ -60,6 +61,20 @@ export default class CollectionStatus extends React.Component<
 						) : (
 							'Closed'
 						)}
+					</div>
+
+					<div className="text-xs font-primary col-span-2 p-2 border-t flex justify-center">
+						<span>
+							Visit the contract on the{' '}
+							<a
+								href={this.props.blockexplorer}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								blockexplorer
+							</a>
+							.
+						</span>
 					</div>
 				</div>
 			</>

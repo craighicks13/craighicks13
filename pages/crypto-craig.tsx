@@ -7,7 +7,6 @@ import { ethers } from 'ethers';
 import { Web3Provider } from '@ethersproject/providers';
 import { useWeb3React, Web3ReactHooks } from '@web3-react/core';
 import NetworkConfigInterface from '../interfaces/NetworkConfigInterface';
-import NftContractType from '../lib/NftContractType';
 import { Contract } from '@ethersproject/contracts';
 import Whitelist from '../lib/Whitelist';
 import { getContentData } from '../lib/content';
@@ -16,6 +15,9 @@ import MintWidget from '../components/web3/nft/MintWidget';
 import CollectionStatus from '../components/web3/nft/CollectionStatus';
 import NotConnected from '../components/web3/nft/NotConnected';
 import NoContract from '../components/web3/nft/NoContract';
+import { nextFriday } from 'date-fns';
+import HasMinted from '../components/web3/nft/HasMinted';
+import SiteMessage from '../components/SiteMessage';
 
 const ContractAbi = require('../artifacts/' +
 	CollectionConfig.contractName +
@@ -31,7 +33,17 @@ export async function getStaticProps() {
 }
 
 export default function CryptoCraig({ faq }) {
-	const { account, chainId, isActive, provider, ENSName } =
+	const [showError, setShowError] = useState<boolean>(false);
+	const [title, setTitle] = useState<JSX.Element | string>('');
+	const [message, setMessage] = useState<JSX.Element | string>('');
+
+	const closeError = (e) => {
+		setShowError(false);
+		setTitle(undefined);
+		setMessage(undefined);
+	};
+
+	const { account, chainId, isActive, provider } =
 		useWeb3React<Web3Provider>();
 	const [contract, setContract] = useState<Contract>();
 	const [maxSupply, setMaxSupply] = useState<number>(0);
@@ -51,19 +63,23 @@ export default function CryptoCraig({ faq }) {
 	);
 	const [isMinting, setIsMinting] = useState<boolean>(false);
 	const [hasMinted, setHasMinted] = useState<boolean>(false);
+	const [txHash, setTxHash] = useState<string>(null);
 
 	const collectionInfo: NetworkConfigInterface =
-		CollectionConfig.mainnet;
+		//	CollectionConfig.mainnet;
+		CollectionConfig.testnet[0];
 
 	useEffect(() => {
 		async function getContractCode(): Promise<void> {
 			if (!chainId) return;
 
-			provider.getBalance(account).then((balance) => {
-				// convert a currency unit from wei to ether
-				const balanceInEth = ethers.utils.formatEther(balance);
-				setBalance(balance);
-			});
+			if (account) {
+				provider.getBalance(account).then((balance) => {
+					// convert a currency unit from wei to ether
+					const balanceInEth = ethers.utils.formatEther(balance);
+					setBalance(balance);
+				});
+			}
 
 			if (chainId != collectionInfo.chainId) {
 				console.log('no contract on chain');
@@ -113,7 +129,7 @@ export default function CryptoCraig({ faq }) {
 	}
 
 	async function mintTokens(amount: number): Promise<void> {
-		//setIsMinting(true);
+		setIsMinting(true);
 		try {
 			console.log('initalize mint');
 			let tx = await contract!.mint(amount, {
@@ -121,16 +137,34 @@ export default function CryptoCraig({ faq }) {
 			});
 			console.log('minting');
 			const receipt = await tx.wait();
-			console.log(receipt.transactionHash);
-			// setHasMinted(true);
-			// setIsMinting(false);
+			setTxHash(receipt.transactionHash);
+			setHasMinted(true);
+			setIsMinting(false);
 		} catch (e) {
-			// mintingError.content = Object(e).message;
-			// props.errorMessage(mintingError);
-			// setIsMinting(false);
-			console.log(e.data.message);
+			setShowError(true);
+			setTitle('Minting Error');
+			setMessage(e.message);
+			setIsMinting(false);
 		}
 	}
+
+	function isNotMainnet(): boolean {
+		return chainId !== CollectionConfig.mainnet.chainId;
+	}
+
+	function generateMarketplaceUrl(): string {
+		return CollectionConfig.marketplaceConfig.generateCollectionUrl(
+			CollectionConfig.marketplaceIdentifier,
+			!isNotMainnet()
+		);
+	}
+
+	function generateMarketplaceAccountUrl(): string {
+		return CollectionConfig.marketplaceConfig.generateCollectionAccountUrl(
+			!isNotMainnet()
+		);
+	}
+
 	return (
 		<Layout>
 			<Head>
@@ -143,6 +177,14 @@ export default function CryptoCraig({ faq }) {
 				alt="Crypto Craig Wallpaper"
 				height={400}
 				width={1400}
+			/>
+
+			<SiteMessage
+				display={showError}
+				title={title}
+				message={message}
+				isError={true}
+				closeWindow={closeError}
 			/>
 
 			<div className="md:flex gap-5">
@@ -166,24 +208,59 @@ export default function CryptoCraig({ faq }) {
 									isPaused={isPaused}
 									isWhitelistMintEnabled={isWhitelistMintEnabled}
 									isUserInWhitelist={isUserInWhitelist}
+									blockexplorer={collectionInfo.blockExplorer.generateContractUrl(
+										collectionInfo.blockExplorer.contract
+									)}
 								/>
-								<MintWidget
-									maxSupply={maxSupply}
-									totalSupply={totalSupply}
-									tokenPrice={tokenPrice}
-									maxMintAmountPerTx={maxMintAmountPerTx}
-									accountBalance={balance}
-									isPaused={false}
-									isWhitelistMintEnabled={false}
-									isUserInWhitelist={false}
-									mintTokens={(mintAmount) => mintTokens(mintAmount)}
-									whitelistMintTokens={function (
-										mintAmount: number
-									): Promise<void> {
-										throw new Error('Function not implemented.');
-									}}
-									currency={'MATIC'}
-								/>
+								{isMinting ? (
+									<div className="bg-white rounded-lg p-2">
+										<span className="bg-primary flex p-4 mb-2 rounded justify-center">
+											Minting your Crypto Craig NFT
+										</span>
+										<Image
+											src="/images/nft/minting-nft.gif"
+											className="rounded-lg"
+											alt="Minting Crypto Craig"
+											height={400}
+											width={400}
+										/>
+										<span className="bg-secondary block p-4 rounded justify-center text-sm text-white">
+											<p>
+												Please be patient, it could take longer the
+												more you minted.
+											</p>
+											<span>I&apos;m excited!! You too???</span>
+										</span>
+									</div>
+								) : (
+									<>
+										{hasMinted && (
+											<HasMinted
+												marketplace={generateMarketplaceAccountUrl()}
+												txhash={txHash}
+											/>
+										)}
+										<MintWidget
+											maxSupply={maxSupply}
+											totalSupply={totalSupply}
+											tokenPrice={tokenPrice}
+											maxMintAmountPerTx={maxMintAmountPerTx}
+											accountBalance={balance}
+											isPaused={false}
+											isWhitelistMintEnabled={false}
+											isUserInWhitelist={false}
+											mintTokens={(mintAmount) =>
+												mintTokens(mintAmount)
+											}
+											whitelistMintTokens={function (
+												mintAmount: number
+											): Promise<void> {
+												throw new Error('Function not implemented.');
+											}}
+											currency={'MATIC'}
+										/>
+									</>
+								)}
 							</>
 						) : (
 							<NoContract />

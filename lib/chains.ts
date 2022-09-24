@@ -52,32 +52,32 @@ export function getAddChainParameters(chainId: number): AddEthereumChainParamete
 export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainInformation } = {
   1: {
     urls: [
-      process.env.infuraKey ? `https://mainnet.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       process.env.alchemyKey ? `https://eth-mainnet.alchemyapi.io/v2/${process.env.alchemyKey}` : '',
       'https://cloudflare-eth.com',
     ].filter((url) => url !== ''),
     name: 'Mainnet',
   },
   3: {
-    urls: [process.env.infuraKey ? `https://ropsten.infura.io/v3/${process.env.infuraKey}` : ''].filter(
+    urls: [process.env.INFURA_API_KEY ? `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}` : ''].filter(
       (url) => url !== ''
     ),
     name: 'Ropsten',
   },
   4: {
-    urls: [process.env.infuraKey ? `https://rinkeby.infura.io/v3/${process.env.infuraKey}` : ''].filter(
+    urls: [process.env.INFURA_API_KEY ? `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}` : ''].filter(
       (url) => url !== ''
     ),
     name: 'Rinkeby',
   },
   5: {
-    urls: [process.env.infuraKey ? `https://goerli.infura.io/v3/${process.env.infuraKey}` : ''].filter(
+    urls: [process.env.INFURA_API_KEY ? `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}` : ''].filter(
       (url) => url !== ''
     ),
     name: 'Görli',
   },
   42: {
-    urls: [process.env.infuraKey ? `https://kovan.infura.io/v3/${process.env.infuraKey}` : ''].filter(
+    urls: [process.env.INFURA_API_KEY ? `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}` : ''].filter(
       (url) => url !== ''
     ),
     name: 'Kovan',
@@ -85,7 +85,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   // Optimism
   10: {
     urls: [
-      process.env.infuraKey ? `https://optimism-mainnet.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://optimism-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       'https://mainnet.optimism.io',
     ].filter((url) => url !== ''),
     name: 'Optimism',
@@ -94,7 +94,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   },
   69: {
     urls: [
-      process.env.infuraKey ? `https://optimism-kovan.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://optimism-kovan.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       'https://kovan.optimism.io',
     ].filter((url) => url !== ''),
     name: 'Optimism Kovan',
@@ -104,7 +104,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   // Arbitrum
   42161: {
     urls: [
-      process.env.infuraKey ? `https://arbitrum-mainnet.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://arbitrum-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       'https://arb1.arbitrum.io/rpc',
     ].filter((url) => url !== ''),
     name: 'Arbitrum One',
@@ -113,7 +113,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   },
   421611: {
     urls: [
-      process.env.infuraKey ? `https://arbitrum-rinkeby.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://arbitrum-rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       'https://rinkeby.arbitrum.io/rpc',
     ].filter((url) => url !== ''),
     name: 'Arbitrum Testnet',
@@ -123,7 +123,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   // Polygon
   137: {
     urls: [
-      process.env.infuraKey ? `https://polygon-mainnet.infura.io/v3/${process.env.infuraKey}` : '',
+      process.env.INFURA_API_KEY ? `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}` : '',
       'https://polygon-rpc.com',
     ].filter((url) => url !== ''),
     name: 'Polygon Mainnet',
@@ -131,7 +131,7 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
     blockExplorerUrls: ['https://polygonscan.com'],
   },
   80001: {
-    urls: [process.env.infuraKey ? `https://polygon-mumbai.infura.io/v3/${process.env.infuraKey}` : ''].filter(
+    urls: [process.env.INFURA_API_KEY ? `https://polygon-mumbai.infura.io/v3/${process.env.INFURA_API_KEY}` : ''].filter(
       (url) => url !== ''
     ),
     name: 'Polygon Mumbai',

@@ -28,9 +28,9 @@ const CollectionConfig: CollectionConfigInterface = {
     price: 7,
     maxMintAmountPerTx: 15,
   },
-   contractAddress: "0x60d93f1aBF0606531e2ab412538D49a1Ddf8558E", // RINKEBY Contract
-  // contractAddress: "0x3B03D6756A64ff9e85E8B433C90e94d575AEC272", // Mumbai Contract
-  //contractAddress: "0x60d93f1aBF0606531e2ab412538D49a1Ddf8558E", // Polygon Contract
+  //contractAddress: "0x60d93f1aBF0606531e2ab412538D49a1Ddf8558E", // RINKEBY Contract
+  //contractAddress: "0x3B03D6756A64ff9e85E8B433C90e94d575AEC272", // Mumbai Contract
+  contractAddress: "0x60d93f1aBF0606531e2ab412538D49a1Ddf8558E", // Polygon Contract
   marketplaceIdentifier: "crypto-craig-nft",
   marketplaceConfig: openSea,
   whitelistAddresses: whitelistAddresses,

@@ -10,7 +10,7 @@ export default function NotConnected() {
 			<a
 				href="https://polygonscan.com/address/0x60d93f1aBF0606531e2ab412538D49a1Ddf8558E"
 				target="_blank"
-				rel="noreferrer"
+				rel="noopener noreferrer"
 			>
 				Polygonscan
 			</a>
