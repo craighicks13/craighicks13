@@ -20,6 +20,9 @@ export default function MainMenu() {
 					<Link href="/services/email-campaigns">
 						<a>Services</a>
 					</Link>
+					<Link href="/posts">
+						<a>Posts</a>
+					</Link>
 				</div>
 			</div>
 			<div className="md:hidden">
@@ -81,6 +84,9 @@ export default function MainMenu() {
 											</Link>
 											<Link href="/services/email-campaigns">
 												<a>Services</a>
+											</Link>
+											<Link href="/posts">
+												<a>Posts</a>
 											</Link>
 										</div>
 									</div>

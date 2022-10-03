@@ -41,7 +41,12 @@
   }
 
   p {
-    @apply mb-5;
+    @apply mt-5;
+  }
+
+  pre {
+    @apply p-2 md:p-5 bg-neutral-200 mt-5 text-secondary text-xs md:text-sm rounded-lg;
+
   }
 
   a {
