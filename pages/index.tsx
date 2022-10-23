@@ -15,10 +15,6 @@ export default function Home() {
 					<title>{siteTitle}</title>
 				</Head>
 				<About />
-				<div className="grid gap-y-2 md:grid-cols-2 md:gap-10">
-					<CryptoCraig />
-					<EmailMarketing />
-				</div>
 				<ChicksDoodles />
 			</Layout>
 		</>

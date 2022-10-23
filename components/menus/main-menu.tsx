@@ -17,9 +17,6 @@ export default function MainMenu() {
 					<Link href="/crypto-craig">
 						<a>NFT</a>
 					</Link>
-					<Link href="/services/email-campaigns">
-						<a>Services</a>
-					</Link>
 					<Link href="/posts">
 						<a>Posts</a>
 					</Link>
@@ -81,9 +78,6 @@ export default function MainMenu() {
 											</Link>
 											<Link href="/crypto-craig">
 												<a>NFT</a>
-											</Link>
-											<Link href="/services/email-campaigns">
-												<a>Services</a>
 											</Link>
 											<Link href="/posts">
 												<a>Posts</a>

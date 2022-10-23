@@ -40,7 +40,7 @@ export default function Layout({
 			<header className={`bg-primary`}>
 				{home ? <HeaderHome /> : <HeaderOne />}
 			</header>
-			<main className="flex flex-col gap-2 md:gap-10 px-5 pt-2 md:pt-10 max-w-6xl mx-auto">
+			<main className="flex flex-col gap-2 md:gap-10 px-5 pt-2 md:pt-10 max-w-7xl mx-auto ">
 				{children}
 			</main>
 			<Footer />
