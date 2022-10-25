@@ -5,8 +5,43 @@ import {
 	FaStar as Star,
 	FaLink as ProjectLink,
 } from 'react-icons/fa';
+import CryptoCraig from '../feature-projects/crypto-craig';
+import PacManCitation from '../feature-projects/pac-man';
+import SimpleLedger from '../feature-projects/simple-ledger';
 
 export default function About() {
+	const skillsList = [
+		{ name: 'Javascript', expert: true },
+		{ name: 'ReactJS', expert: true },
+		{ name: 'Typescript', expert: true },
+		{ name: 'Web3.js', expert: false },
+		{ name: 'TailwindCss', expert: false },
+		{ name: 'NextJS', expert: false },
+		{ name: 'node.js', expert: false },
+		{ name: 'Redux', expert: false },
+		{ name: 'Client Facing', expert: false },
+		{ name: 'Project Management', expert: false },
+		{ name: 'Team Lead', expert: false },
+		{ name: 'MongoDB', expert: false },
+		{ name: 'Express', expert: false },
+		{ name: 'Vercel', expert: false },
+		{ name: 'NFT', expert: false },
+		{ name: 'Hardhat', expert: false },
+		{ name: 'Truffle', expert: false },
+		{ name: 'Solidity', expert: false },
+		{ name: 'JSON', expert: false },
+		{ name: 'REST API', expert: false },
+		{ name: 'MySQL', expert: false },
+		{ name: 'PHP', expert: false },
+		{ name: 'Object-Oriented Programming', expert: false },
+		{ name: 'MVC Frameworks', expert: false },
+		{ name: 'Photoshop', expert: false },
+		{ name: 'Adobe Illustrator', expert: false },
+		{ name: 'Adobe Premiere', expert: false },
+		{ name: 'After Effects', expert: false },
+		{ name: 'Cinema 4D', expert: false },
+	];
+
 	return (
 		<>
 			<section className="flex flex-wrap md:flex-nowrap gap-10">
@@ -77,174 +112,28 @@ export default function About() {
 				</div>
 				<div className="mt-5">
 					<ul className="flex gap-3 flex-wrap sm:text-lg">
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary_2 text-white rounded-l-full rounded-tr-full">
-							<Star />
-							Javascript
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary_2 text-white rounded-l-full rounded-tr-full">
-							<Star />
-							React.js
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary_2 text-white rounded-l-full rounded-tr-full">
-							<Star />
-							Typescript
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Web3.js
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							TailwindCss
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							NextJS
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							nodejs
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Redux
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							MongoDB
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Vercel
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							NFT
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Hardhat
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Truffle
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Solidity
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Client Facing
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							JSON
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							REST API
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Object-Oriented Programming
-						</li>
-						<li className="flex gap-3 items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							MVC Frameworks
-						</li>
-						<li className="flex gap-3 text-lg items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Photoshop
-						</li>
-						<li className="flex gap-3 text-lg items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Adobe Illustrator
-						</li>
-						<li className="flex gap-3 text-lg items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							Adobe Premiere
-						</li>
-						<li className="flex gap-3 text-lg items-center px-5 py-3 bg-secondary text-white rounded-l-full rounded-tr-full">
-							After Effects
-						</li>
+						{skillsList.map((item, index) => {
+							return (
+								<li
+									key={index}
+									className={`flex gap-3 items-center px-5 py-3 ${
+										item.expert ? 'bg-secondary_2' : 'bg-secondary'
+									} text-white rounded-l-full rounded-tr-full`}
+								>
+									{item.expert && <Star />}
+									{item.name}
+								</li>
+							);
+						})}
 					</ul>
 				</div>
 			</section>
 			<section>
 				<h2>Projects</h2>
 				<div className="flex flex-wrap gap-5 justify-center">
-					<div className="bg-primary p-10 rounded-xl mt-10 w-96 border-4 border-white">
-						<h3>Crypto Craig NFT Collection</h3>
-						<div className="mt-5">
-							<Image
-								priority
-								src="/images/cryptocraig-banner.png"
-								className="rounded-lg"
-								height={400}
-								width={1400}
-								alt="CryptoCraig NFT Collection"
-							/>
-						</div>
-						<div className="mt-5">
-							Collection of 5000 unique ridiculous variations of me.
-							Got some polygon you want to waste. Come check out my
-							NFT collection and perks. Images will be revieled on my
-							birthday this year!!
-						</div>
-						<div className="mt-5">
-							<Link href={'/crypto-craig'}>
-								<a className="btn btn-primary flex gap-3 items-center">
-									<ProjectLink />
-									See Project
-								</a>
-							</Link>
-						</div>
-					</div>
-					<div className="bg-primary p-10 rounded-xl mt-10 w-96 border-4 border-white">
-						<h3>Pac-man Citation Builder</h3>
-						<div className="mt-5">
-							<Image
-								priority
-								src="/images/projects/pac-man-citation-1.png"
-								className="rounded-lg"
-								height={706}
-								width={955}
-								alt="Pac-man Citation Builder Learning Activity"
-							/>
-						</div>
-						<div className="mt-5">
-							Pac-man with a twist. Use pac-man to gobble the citation
-							snippets in the correct order according to the type of
-							source indicated in the centre. Use the arrow keys to
-							move pac-man around the maze or click the snippet you
-							would like pac-man to eat next.
-						</div>
-						<div className="mt-5">
-							<a
-								href="https://projects.craighicks.com/pacman-citation/"
-								target="_blank"
-								rel="noreferrer"
-								className="btn btn-primary flex gap-3 items-center"
-							>
-								<ProjectLink />
-								See Project
-							</a>
-						</div>
-					</div>
-					<div className="bg-primary p-10 rounded-xl mt-10 w-96 border-4 border-white">
-						<h3>My Simple Ledger Full Stack Project</h3>
-						<div className="mt-5">
-							<Image
-								priority
-								src="/images/projects/my-simple-ledger.png"
-								className="rounded-lg"
-								height={493}
-								width={806}
-								alt="My Simple Ledger Full Stack Project"
-							/>
-						</div>
-						<div className="mt-5">
-							he goal of this challenge is to help us learn how you
-							break down and solve technical challenges. This
-							challenge involves a simple user story, a git repository
-							and you. The story is about writing a Simple Ledger to
-							support Harold the accountant - exponentially improving
-							his day to day work.
-						</div>
-						<div className="mt-5">
-							<a
-								href="https://my-simple-ledger.vercel.app/"
-								target="_blank"
-								rel="noreferrer"
-								className="btn btn-primary flex gap-3 items-center"
-							>
-								<ProjectLink />
-								See Project
-							</a>
-						</div>
-					</div>
+					<CryptoCraig />
+					<PacManCitation />
+					<SimpleLedger />
 				</div>
 			</section>
 		</>

@@ -57,74 +57,43 @@ export default function Footer() {
 
 	return (
 		<>
-			<div className="sm:grid grid-flow-col auto-cols-max gap-5 w-full justify-between px-10 pt-5 h-36 bg-textmain text-neutral-100 mt-10 pb-5 items-end">
-				{/* <div className="">
-					<form
-						id="newsletter_form"
-						method="post"
-						onSubmit={handleSubmit}
-					>
-						<div className="text-sm">
-							Sign up for my Newsletter!! I will send you updates and
-							stuff.
-						</div>
-						<div className="grid grid-flow-col items-center gap-5 justify-self-start">
-							<input
-								onChange={handleChange}
-								type="text"
-								id="email"
-								name="email"
-								required
-								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-								placeholder="Email"
-								className="text-neutral-600 px-5 h-6 rounded"
-								title="Please enter a valid email abd@xyz.com"
-							/>
-							<ReCAPTCHA
-								ref={recaptchaRef}
-								size="invisible"
-								sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-								onChange={onReCAPTCHAChange}
-							/>
-							<button className="btn" type="submit">
-								Submit
-							</button>
-						</div>
-					</form>
-				</div> */}
-				<div className="flex gap-4 text-3xl">
-					<a
-						href="https://github.com/craighicks13/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BsGithub />
-					</a>
+			<div className="h-36 bg-textmain text-neutral-100 mt-10 w-full py-10">
+				<div className="mx-auto max-w-7xl flex flex-wrap gap-5 justify-between px-10">
+					<div className="flex gap-4 text-3xl">
+						<a
+							href="https://github.com/craighicks13/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BsGithub />
+						</a>
 
-					<a
-						href="https://twitter.com/craighicks13"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BsTwitter />
-					</a>
+						<a
+							href="https://twitter.com/craighicks13"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BsTwitter />
+						</a>
 
-					<a
-						href="https://www.linkedin.com/in/craighicks13/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BsLinkedin />
-					</a>
-					<a
-						href="https://www.instagram.com/craighicks13/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<BsInstagram />
-					</a>
+						<a
+							href="https://www.linkedin.com/in/craighicks13/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BsLinkedin />
+						</a>
+						<a
+							href="https://www.instagram.com/craighicks13/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BsInstagram />
+						</a>
+					</div>
+					<div></div>
+					<div>&copy; Craig Hicks 2022</div>
 				</div>
-				<div>&copy; Craig Hicks 2022</div>
 			</div>
 		</>
 	);
