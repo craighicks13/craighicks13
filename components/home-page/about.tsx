@@ -18,6 +18,8 @@ export default function About() {
 		{ name: 'TailwindCss', expert: false },
 		{ name: 'NextJS', expert: false },
 		{ name: 'node.js', expert: false },
+		{ name: 'GraphQL', expert: false },
+		{ name: 'Apollo Client', expert: false },
 		{ name: 'Redux', expert: false },
 		{ name: 'Client Facing', expert: false },
 		{ name: 'Project Management', expert: false },
@@ -47,19 +49,29 @@ export default function About() {
 			<section className="flex flex-wrap md:flex-nowrap gap-10">
 				<div className="bg-white p-10 rounded-xl">
 					<h2 className="mb-10">
-						Developer, Team Lead, Project Management, Digital Media
+						Fullstack Developer | Team Lead | Project Management |
+						Digital Media
 					</h2>
 					<span className="text-xl">
-						Technology professional with experience in all aspects of
-						the development process. Been developing for the web for
-						nearly two decades and developed many interactive
-						applications for online, desktop and mobile using
-						Actionscript and libraries. Transitioned to HTML5,
-						javascript libraries like React and now Web3. Possess a
-						passion for learning, problem-solving, collaboration, and
-						embracing challenges with a solutions based positive
-						approach. Strive to be a valuable member of a team and
-						grow within an organization.
+						I am a full stack developer with over fifteen years of
+						experience in the industry. Throughout my career, I have
+						gained a broad range of skills and expertise in all
+						aspects of the development process, and have also taken on
+						leadership and management roles where I have demonstrated
+						my ability to guide and motivate teams to achieve their
+						goals. I have developed numerous interactive applications
+						for online, desktop, and mobile platforms, and have a
+						passion for learning and problem-solving. I thrive in
+						collaborative environments and enjoy tackling challenges
+						head-on with a solutions-based approach. As a leader, I
+						have a track record of bringing out the best in my team
+						members and fostering a positive, inclusive work culture.
+						I am eager to continue learning and growing as a
+						developer, and am excited to bring my skills, experience,
+						and enthusiasm to a new team. As a full stack developer, I
+						have the ability to work on projects from start to finish,
+						using a variety of languages and technologies to create
+						high-quality, user-friendly applications.
 					</span>
 				</div>
 				<div className="bg-secondary_2 p-10 rounded-xl">
@@ -77,29 +89,41 @@ export default function About() {
 							<span className="font-bold text-primary mr-1">
 								Development:
 							</span>{' '}
-							Developer with experience in full stack development.
-							Developed complex applications using in multiple
-							languages (JS/NODEjs, AS3, PHP). Constantly learning and
-							embrace popular frameworks to develop quality
-							applications.
-						</div>
-						<div className="mt-5">
-							<span className="font-bold text-primary mr-1">
-								Technology Management:
-							</span>{' '}
-							Understanding how technology can be leveraged to improve
-							operations, processes and user experience. Establish
-							processes for technology review, evaluation, and
-							implementation; as well as developing effective support
-							solutions.
+							Highly resourceful developer with over 10 years of full
+							stack development and award winning digital media
+							production experience. Worked as sole developer and
+							within team settings on projects for the web, mobile and
+							desktop. Constantly learning and staying on top of
+							technology trends and advancements.
 						</div>
 						<div className="mt-5">
 							<span className="font-bold text-primary mr-1">
 								Leadership:
 							</span>{' '}
-							10+ years experience leading multifunctional teams and
-							project management. A natural mentor and lift others to
-							achieve goals.
+							With over five years of experience in leading
+							multifunctional teams and mentoring junior staff, I have
+							a proven track record of supporting my colleagues to
+							achieve their goals. I am also a valued contributor to
+							leadership groups, where I share my ideas, apply my
+							reasoned judgments, and help establish goals for our
+							organization. I am passionate about fostering a
+							collaborative and inclusive work environment, and I take
+							great pride in the success of the teams that I have had
+							the privilege of leading.
+						</div>
+						<div className="mt-5">
+							<span className="font-bold text-primary mr-1">
+								Management:
+							</span>{' '}
+							Responsible for leading all aspects of the project
+							process, including daily scrums, performance management,
+							code reviews, and hiring new team members. My strong
+							leadership skills and attention to detail have helped me
+							effectively guide my team to success, delivering
+							high-quality projects on time and within budget. I am
+							committed to helping my team members reach their full
+							potential and am always looking for ways to improve our
+							processes and practices.
 						</div>
 					</div>
 				</div>

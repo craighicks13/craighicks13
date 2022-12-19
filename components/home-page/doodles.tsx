@@ -9,18 +9,10 @@ export default function ChicksDoodles() {
 		<>
 			<Image
 				priority
-				src="/images/doodles/chicks-signature.png"
+				src="/images/doodles/doodles-header.png"
 				className="mt-5"
-				height={295}
-				width={1105}
-				alt="chicks Doodles custom posters and printables"
-			/>
-			<Image
-				priority
-				src="/images/doodles/Doodles-title.png"
-				className="mt-5"
-				height={305}
-				width={951}
+				height={612}
+				width={750}
 				alt="chicks Doodles custom posters and printables"
 			/>
 		</>
